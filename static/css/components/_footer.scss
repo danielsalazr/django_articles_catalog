@@ -1,0 +1,18 @@
+footer{
+	margin-top: auto;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	justify-content: space-between;
+	// width: 100%;
+	height: 50px;           
+	background-color: $secondcolor;
+	color: $maincolor;
+	font-family: 'The Nautigal';
+	font-size: 1.8rem;
+	font-weight: 400;
+	font-weight: bold;
+	display: flex;
+	padding: 15px 20px 15px;
+	border-bottom: 1px solid #efefef;
+	gap: 7;
+}

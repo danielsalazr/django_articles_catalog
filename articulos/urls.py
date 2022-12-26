@@ -4,17 +4,18 @@ from .views import (
     creacion, 
     create, 
     buscar,
-    busqueda)
-from django.conf import settings
-from  django.conf.urls.static import static
+    busqueda
+)
+
+
 
 urlpatterns = [
-    path('articulos/',lista_articulos, name='articulos' ),
-    path('articulos/crear/',creacion, name='creacion' ),
-    path('articulos/create/',create, name='create' ),
-    path('articulos/buscar/',buscar, name='buscar' ),
-    path('articulos/busqueda/',busqueda, name='busqueda' ),
+    path('',lista_articulos, name='articulos' ),
+    path('crear/',creacion, name='creacion' ),
+    path('create/',create, name='create' ),
+    path('buscar/',buscar, name='buscar' ),
+    path('busqueda/',busqueda, name='busqueda' ),
 
     
 
-] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 

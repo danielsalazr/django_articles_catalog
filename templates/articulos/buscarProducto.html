@@ -1,8 +1,16 @@
-<body>
+{% extends 'base.html' %}
+
+{% block container %}
+<div class="main_page">
     <form action="{% url 'articulos:buscar' %}" method="GET">
         <input type="text" name="descripcion" placeholder="descripcion">
         <button type="submit">Buscar</button>
     </form>
-    <br>
-    <a href="/">Pagina principal</a>
-</body>
+    {% comment %} <br> {% endcomment %}
+    {% comment %} <button class="button-exit"><a href="/">Pagina principal</a></button> {% endcomment %}
+    <a class="button-exit" href="/">Pagina principal</a>
+</div>
+
+{% endblock container %}
+
+    

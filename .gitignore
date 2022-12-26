@@ -48,3 +48,5 @@
 
 # Portable Document Format
 *.pdf
+
+*.config

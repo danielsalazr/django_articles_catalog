@@ -1,14 +1,9 @@
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form method='post' action="{% url 'articulos:create' %}" enctype="multipart/form-data">
+{% block container %}
+
+<div class="main_page">
+    <form class="article__form" method='post' action="{% url 'articulos:create' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="number" placeholder="linea" name="linea" required>
         <input type="number" placeholder="grupo" name="grupo" required>
@@ -19,7 +14,12 @@
         <input type="number" placeholder="stock" name="stock" required>
         <button type="submit">registrar</button>
     </form>
-    <br>
-    <a href="/">Pagina principal</a>
-</body>
-</html>
+    {% comment %} <br> {% endcomment %}
+    {% comment %} <button class="button-exit"><a class="button-exit" href="/">Pagina principal</a></button> {% endcomment %}
+    <a class="button-exit" href="/">Pagina principal</a>
+    
+</div>
+
+
+
+{% endblock container %}

@@ -1,0 +1,41 @@
+
+$maincolor: #FFFFFF;
+$secondcolor: #00171F;
+$thirdcolor: #003459;
+$fourthcolor: #007EA7;
+$fivethcolor: #00A8E8;
+
+$fuente1: 'The Nautigal', cursive;
+
+$radiusButton: 7px;
+$widthButtons: 280px;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    -ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+} 
+
+body{
+    // margin: 0;
+    width: 100%;
+	// background-color: #e4e9f7;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	font-family: "Poppins", sans-serif;
+}  
+
+@mixin exitButton {
+	color: $secondcolor;
+	background-color: #fff204;
+    border: 1px solid black;
+	border-radius: $radiusButton;
+    margin-bottom: 10px;
+    width: $widthButtons;
+}

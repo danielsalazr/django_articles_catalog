@@ -1,0 +1,52 @@
+{% load static %}
+
+<header class="header">
+    <span class='header__title'>Catalogo de Articulos</span>
+    {% comment %} <button class="header__button" onclick="myFunction()"></button> {% endcomment %}
+    <label for="nav-check" class="header__nav__icon"> </label>
+    <input type="checkbox"  class="header__checkbox" id="nav-check">
+    
+    {% comment %} <img src="{% static 'assets/icons/icon_menu.svg' %}" alt="menu" class="header__menu"> {% endcomment %}
+    
+    <nav class="header__nav" id="nav">
+        <ul>
+                <li><a href="{% url 'articulos:creacion' %}">crear articulo</a></li>
+                <li><a href="{% url 'articulos:busqueda' %}">buscar articulo</a></li>
+                <li><a href="{% url 'articulos:articulos' %}">listado completo</a></li>
+          </ul>
+    </nav>
+    <span class='header__name'>Daniel Salazar</span>
+</header>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("nav");
+        if (x.className === "header__nav") {
+          x.className += " responsive";
+        } else {
+          x.className = "header__nav";
+        }
+        console.log("ejecucion");
+      }
+
+      var checkbox = document.querySelector("#nav-check");
+      var x = document.getElementById("nav");
+
+        checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            console.log("Checkbox is checked..");
+                x.className += " responsive";
+              console.log("ejecucion");
+        } else {
+            x.className = "header__nav";
+            console.log("Checkbox is not checked..");
+        }
+        });
+</script>
+
+
+
+{% comment %} 
+
+
+{% endcomment %}

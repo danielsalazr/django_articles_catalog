@@ -1,0 +1,168 @@
+@media screen and (max-width: 768px) {
+
+    .header  {
+
+        display: block;
+        height: fit-content;
+
+        &__menu{
+            display: block;
+            width: 45px;
+        }
+
+        &__nav{
+            display: none;
+            width: 100%;
+            // transition: all 0.5s linear;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+
+        &__nav.responsive {
+            position: relative;
+            background-color: #007ea726;
+            border-radius: 12px;
+        }
+        
+        &__nav__icon {
+            display: inline-block;
+            width: 35px;
+            height: 40px;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            padding: 7px;
+            
+            background-image: url("../assets/icons/icon_menu.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            // background-position: 0 10px;
+            background-position: center;
+            z-index: 2;
+            transition: all 0.5s ease-out;
+        }
+
+        &__nav__icon:hover {
+            border: 1px solid $fourthcolor;
+            border-radius: 7px;
+        }
+
+
+        // &__nav.responsive + .icon {
+        //     position: absolute;
+        //     right: 0;
+        //     top: 0;
+        // }
+
+        &__nav.responsive {
+            float: none;
+            display: block;
+        }
+
+        &__nav.responsive ul {
+            display: block;
+            text-align: left;
+            width: 100%;          
+        }
+        &__nav.responsive li{
+            width: 100%;
+            text-align: center;
+        }
+
+        &__nav.responsive a{
+            width: 100%;
+            display: inline-block;
+            transition: all 0.08s linear;
+        }
+
+        &__nav.responsive a:hover{
+            color: white;
+            background-color: $fourthcolor;
+
+            
+        }
+
+
+
+        // &__nav ul{
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: flex-start;
+        // }
+        &__name{
+            display: none;
+        }
+        
+    }
+
+    .inventory{
+        display: grid;
+        grid-template-columns: 1fr ; 
+        grid-auto-rows:0.6fr 1fr;
+        padding: 0px 20px;
+        justify-items: center;
+    }
+    .inventory_fields{
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 2.2fr;
+        grid-template-areas: 
+        "t1 i1"
+        "t2 i2"
+        "t3 i3"
+        "button button"
+        "form form";
+        place-content: center;
+        /* width: 80%; */
+        width: 100%;
+    }
+    .textos:first-of-type{
+        grid-area: t1;
+    }
+    .textos:nth-of-type(2){
+        grid-area: t2;
+    }
+    .textos:nth-of-type(3){
+        grid-area: t3;
+    }
+    
+    .camposbc:first-child{
+        grid-area: i1;
+    }
+    .camposbc:nth-of-type(2){
+        grid-area: i2;
+    }
+    .camposbc:last-of-type{
+        grid-area: i3;
+    }
+    .camposbc{
+        width: 80%;	
+    }
+    .buttonSend{
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color: #f8f9fa;
+        margin-top: 10px;
+        height: 30px;
+        width: 100%;
+        font-size: 1.8rem;
+        grid-area: button;
+    }
+    .inventory_fields form {
+        grid-area: form;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }		
+    .fields-button__download{
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    .inventory_table {
+        height: 45vh;
+        width: 85vw;
+    }
+    
+
+}

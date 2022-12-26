@@ -1,0 +1,71 @@
+.header{
+	display: flex;
+	/* grid-template-columns: auto auto; */
+	justify-content: space-between;
+	/* height: auto; */
+	min-height: 60px;
+    height: fit-content;
+	// width: 100%;
+	color: black;
+	// background-color: $maincolor;/*#e4e9f7;*/
+    background-color: #efefef;
+	font-family: "Poppins", sans-serif;
+	font-size: 2.8rem;
+	font-weight: 500;
+	display: flex;
+	padding: 10px 20px 10px;
+	border-bottom: #11101d24 solid 1px;
+	// gap: 7;
+
+    &__menu{
+        display:none;
+    }
+
+    &__button{
+        display: none;
+    }
+    
+    &__checkbox{
+        display: none;
+    }
+
+    &__nav__icon{
+        display: none;
+
+    }
+    
+    &__nav{
+        width: 50%;
+        // transition: all 2s linear;
+    }
+
+    &__nav.responsive{
+        transition: display 2s linear;
+    }
+
+    &__nav li {
+        text-align: center;
+    }
+    
+    &__nav ul li a {
+        padding: 8px;
+        color: #000000;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    
+    &__nav ul li:hover {
+        color: $fourthcolor;
+        border: 1px solid $fivethcolor;
+        border-radius: 12px;
+    }
+    
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    } 
+
+
+	
+}
