@@ -4,7 +4,7 @@
 <div class="main_page"> 
     <p>Descripcion:{{articulo.descripcion}}</p>
     <p>Stock: {{articulo.stock}} {{articulo.unidad}}</p>
-    <img class="search__image" src="http://localhost:8000/media/{{articulo.imagen}}" alt="" style="width: 400px; height: 400px;">
+    <img class="search__image" src="http://sypde:8020/media/{{articulo.imagen}}" alt="" style="width: 400px; height: 400px;">
     {% comment %} <br> {% endcomment %}
     {% comment %} <button class="button-search"><a href="{% url 'articulos:busqueda' %}">Realizar otra busqueda</a></button> {% endcomment %}
     {% comment %} <button class="button-exit"><a  class="button-exit" href="/">Pagina principal</a></button> {% endcomment %}
