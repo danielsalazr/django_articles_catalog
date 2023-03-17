@@ -12,20 +12,30 @@ from .models import Articulos
 #Serializers
 from .serializers import ArticleSerializers
 
-@api_view(['GET'])
-def lista_articulos(request):
-
-    articulos = Articulos.objects.all()
-    serializer = ArticleSerializers(articulos, many=True)
-    print (articulos)
-
-    return Response(serializer.data)
+#Python
+from rich.console import Console
+console = Console()
 
 def creacion(request):
     return render(request, 'articulos/crearProducto.html')
 
 def busqueda(request):
     return render(request, 'articulos/buscarProducto.html')
+
+#obtener todo el llistado de articulos
+@api_view(['GET'])
+def lista_articulos(request):
+
+    articulos = Articulos.objects.all()
+    serializer = ArticleSerializers(articulos, many=True)
+    print (articulos)
+    console.log(serializer.data)
+    print(serializer.data[0]['linea'])
+
+    return render(request, 'articulos/listadoArticulos.html', {'items': serializer.data})
+    #return Response(serializer.data)
+
+
 
 @api_view(['POST'])
 def create(request):
@@ -38,9 +48,12 @@ def create(request):
 
 @api_view(['GET'])
 def buscar(request):
-    busqueda = str(request.query_params['descripcion'])
-    #print(busqueda)
-    articulo = Articulos.objects.get(descripcion=busqueda,)
-    print(articulo)
-    return render(request, 'articulos/resultadoBusqueda.html', {'articulo':articulo})
+    try:
+        busqueda = str(request.query_params['descripcion'])
+        #print(busqueda)
+        articulo = Articulos.objects.get(descripcion__icontains=busqueda,)
+        print(articulo)
+        return render(request, 'articulos/resultadoBusqueda.html', {'articulo':articulo})
+    except:
+        return render(request, '404.html')
     #return HttpResponse("OK")
