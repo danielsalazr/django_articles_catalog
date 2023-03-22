@@ -28,9 +28,9 @@ def lista_articulos(request):
 
     articulos = Articulos.objects.all()
     serializer = ArticleSerializers(articulos, many=True)
-    print (articulos)
-    console.log(serializer.data)
-    print(serializer.data[0]['linea'])
+    # print (articulos)
+    # console.log(serializer.data)
+    # print(serializer.data[0]['linea'])
 
     return render(request, 'articulos/listadoArticulos.html', {'items': serializer.data})
     #return Response(serializer.data)
@@ -52,7 +52,7 @@ def buscar(request):
         busqueda = str(request.query_params['descripcion'])
         #print(busqueda)
         articulo = Articulos.objects.get(descripcion__icontains=busqueda,)
-        print(articulo)
+        # print(articulo)
         return render(request, 'articulos/resultadoBusqueda.html', {'articulo':articulo})
     except:
         return render(request, '404.html')

@@ -3,7 +3,7 @@
 	/* grid-template-columns: auto auto; */
 	justify-content: space-between;
 	/* height: auto; */
-	min-height: 60px;
+	min-height: 35px;
     height: fit-content;
 	// width: 100%;
 	color: black;
@@ -14,6 +14,8 @@
 	font-weight: 500;
 	display: flex;
 	padding: 10px 20px 10px;
+    padding-left: 256px;
+    padding-right: 256px;
 	border-bottom: #11101d24 solid 1px;
 	// gap: 7;
 
@@ -36,7 +38,9 @@
     
     &__nav{
         width: 50%;
+        font-size: 2.0rem;
         // transition: all 2s linear;
+        margin: auto 0;
     }
 
     &__nav.responsive{
@@ -46,26 +50,27 @@
     &__nav li {
         text-align: center;
     }
-    
+
     &__nav ul li a {
         padding: 8px;
         color: #000000;
         text-decoration: none;
         margin-right: 10px;
     }
-    
+
     &__nav ul li:hover {
         color: $fourthcolor;
         border: 1px solid $fivethcolor;
         border-radius: 12px;
     }
-    
+
     ul {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-    } 
+        list-style-type: none;
+
+    }
 
 
-	
 }
