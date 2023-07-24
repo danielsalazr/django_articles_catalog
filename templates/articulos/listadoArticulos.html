@@ -1,33 +1,43 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block container %}
 
-<table style="boder: 1px solid #000000;">
-    <thead >
-        <tr style="boder: 1px solid #000000;">
-            <th>linea</th>
-            <th>grupo</th>
-            <th>elemento</th>
-            <th>descripcion</th>
-            <th>unidad</th>
-            <th>stock</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in items %}
-        <tr>
-            <td>{{ item.linea }}</td> 
-            <td>{{ item.grupo }}</td> 
-            <td>{{ item.elemento }}</td> 
-            <td>{{ item.descripcion }}</td> 
-            <td>{{ item.unidad }}</td> 
-            <td>{{ item.stock }}</td> 
-        </tr>
-        {% endfor %}
-    </tbody>
-    
+<section class="articlesList">
+    <table 
+        id="myTable"
+        class="display"
+        
+    >
+        <thead >
+            <tr>
+                <th>linea</th>
+                <th>grupo</th>
+                <th>elemento</th>
+                <th>descripcion</th>
+                <th>unidad</th>
+                <th>stock</th>
+            </tr>
+        </thead>
+        <tbody id ='myTableBody'>
+            {% comment %} {% for item in items %}
+            <tr>
+                <td>{{ item.linea }}</td> 
+                <td>{{ item.grupo }}</td> 
+                <td>{{ item.elemento }}</td> 
+                <td>{{ item.descripcion }}</td> 
+                <td>{{ item.unidad }}</td> 
+                <td>{{ item.stock }}</td> 
+            </tr>
+            {% endfor %} {% endcomment %}
+        </tbody>
+        
 
-</table>
+    </table>
+</section>
 
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" /> 
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script src="{% static 'js/articulos/listadoDeArticulos.js' %}"></script>
 {% endblock container %}

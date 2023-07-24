@@ -4,13 +4,16 @@ from .views import (
     creacion, 
     create, 
     buscar,
-    busqueda
+    busqueda,
+    TableArticulos,
 )
 
 
 
 urlpatterns = [
-    path('',lista_articulos, name='articulos' ),
+    # path('',lista_articulos, name='articulos' ),
+    path('',TableArticulos.as_view(), name='articulos' ),
+    path('lista_articulos/',lista_articulos, name='lista_articulos' ),
     path('crear/',creacion, name='creacion' ),
     path('create/',create, name='create' ),
     path('buscar/',buscar, name='buscar' ),

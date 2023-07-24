@@ -388,3 +388,24 @@ footer {
     -ms-grid-column-span: 2;
   }
 }
+
+#myTable_wrapper{
+  max-width: 1140px;
+  font-size: 1.4rem;
+  margin: 24px auto 16px;
+}
+
+.articlesList{
+  /* display: flex; */
+  /* flex-direction:column; */
+  /* align-items: center; */
+  /* justify-content:center; */
+  
+  width: 100%;
+}
+
+
+.articlesList table{
+  max-width: 1140px !important;
+  margin:0 !important;
+}

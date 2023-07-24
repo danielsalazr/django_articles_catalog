@@ -15,7 +15,7 @@ class ArticleSerializers(serializers.ModelSerializer):
             'elemento',
             'descripcion',
             'unidad',
-            'imagen',
+            # 'imagen',
             'stock',
         ]
 
